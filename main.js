@@ -7,6 +7,8 @@ let inputElement = document.querySelector('.user-input');
 
 let inputMQObject = MQ.MathField(inputElement, {restrictMismatchedBrackets: true});
 
+inputMQObject.focus();
+
 let outputField = document.querySelector('.output-field');
 
 
