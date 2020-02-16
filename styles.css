@@ -453,6 +453,10 @@ span.mq-sqrt-stem > .mq-operator-name, span.mq-sqrt-stem > .mq-binary-operator{
   height: auto;
 }
 
+.thumb-img:hover {
+  opacity: 0.8;
+}
+
 .project-name {
   color: #888890;
   font-family: 'Raleway', sans-serif;
