@@ -206,7 +206,7 @@ table {
   border-radius: 8px;
   padding-top: 20px;
   margin-top: 20px;
-  overflow-x: scroll;
+  overflow-x: hide;
   overscroll-behavior: contain;
 }
 
@@ -278,7 +278,8 @@ table {
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 32px;
   margin-bottom: 4px;
-  overflow: scroll;
+  overflow-y: hide;
+  overflow-x: hide;
 }
 
 .math-container {
@@ -292,13 +293,14 @@ table {
   background-color:#1A1D1F;
   padding: 16px 0px 16px 26px;
   margin: 0px 0px 0px 16px;
-  overflow-x: scroll;
+  overflow-x: hide;
+  overflow-y: hide;
 }
 
 .math-container .mq-root-block {
   max-height: 80px;
-  overflow-x: auto;
-  overflow-y: auto;
+  overflow-x: hide;
+  overflow-y: hide;
 }
 
 .delete-btn {
