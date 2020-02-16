@@ -383,6 +383,10 @@ span.mq-sqrt-stem > span {
   color:#E0E5E0;
 }
 
+span.mq-sqrt-stem > .mq-nonSymbola {
+  color:#72C2FD;
+}
+
 span.mq-sqrt-stem > .mq-operator-name, span.mq-sqrt-stem > .mq-binary-operator{
   color: #FD9BC1;
 }
