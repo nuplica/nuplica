@@ -80,7 +80,7 @@ table {
   font-size: 24px;
   text-decoration: none;
   margin: 0;
-  padding: 0;
+	padding: 0;
 }
 
 .logo:hover {
@@ -101,6 +101,10 @@ table {
 	padding: 0;
 }
 
+.nav-item > a:hover {
+  color: #6D6D81;
+}
+
 .nav-item > a {
   color: #888890;
   font-family: 'Josefin Sans', sans-serif;
@@ -108,11 +112,7 @@ table {
   font-size: 13px;
   text-decoration: none;
   margin: 10px 0px 10px 0px;
-  padding: 0;
-}
-
-.nav-item > a:hover {
-  color: #6D6D81;
+	padding: 0;
 }
 
 .legend-container {
@@ -133,7 +133,7 @@ table {
   line-height: 1.4em;
   letter-spacing: 1.25\px;
   margin: 0;
-  padding: 0;
+	padding: 0;
 }
 
 .legend-content {
@@ -155,6 +155,10 @@ table {
   font-weight: 400;
   font-size: 20px;
   line-height: 1.2em;
+}
+
+.red {
+  color: #FC1A57;
 }
 
 .green {
@@ -187,17 +191,21 @@ table {
 
 /* EulerType Styles
 ------------------------------------------------------------------------------*/
+.small-screens {
+  display: block;
+  color: #888890;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.2em;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid #FC1A57;
+  margin-bottom: 60px;
+}
 
 .eulertype-container {
-  border-radius: 16px;
-  width: 90%;
-  height: 650px;
-  margin: 40px 10px 40px 10px;
-  background-color: #1F2229;
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  margin-left: auto;
-  margin-right: auto;
+  display: none;
 }
 
 .output-field {
@@ -206,7 +214,7 @@ table {
   border-radius: 8px;
   padding-top: 20px;
   margin-top: 20px;
-  overflow-x: hide;
+  overflow-x: scroll;
   overscroll-behavior: contain;
 }
 
@@ -278,8 +286,7 @@ table {
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 32px;
   margin-bottom: 4px;
-  overflow-y: hide;
-  overflow-x: hide;
+  overflow: scroll;
 }
 
 .math-container {
@@ -293,14 +300,13 @@ table {
   background-color:#1A1D1F;
   padding: 16px 0px 16px 26px;
   margin: 0px 0px 0px 16px;
-  overflow-x: hide;
-  overflow-y: hide;
+  overflow-x: scroll;
 }
 
 .math-container .mq-root-block {
   max-height: 80px;
-  overflow-x: hide;
-  overflow-y: hide;
+  overflow-x: auto;
+  overflow-y: auto;
 }
 
 .delete-btn {
@@ -316,6 +322,17 @@ table {
   margin-right: 36px;
   background-color: #1A1D1F;
   color: #E0E5E0;
+}
+
+.delete-btn:focus {
+  border-style: none;
+  outline: none;
+}
+
+.delete-btn:active {
+  border-style: none;
+  outline: none;
+  background-color:rgb(34, 38, 41);
 }
 
 span.mq-sup > var {
@@ -531,5 +548,24 @@ span.mq-sqrt-stem > .mq-operator-name, span.mq-sqrt-stem > .mq-binary-operator{
   
   .copyright {
     display: block;
+  }
+}
+
+@media (min-width: 1000px) {
+  .eulertype-container {
+  
+    border-radius: 16px;
+    width: 90%;
+    height: 650px;
+    margin: 40px 10px 40px 10px;
+    background-color: #1F2229;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .small-screens {
+    display: none;
   }
 }
