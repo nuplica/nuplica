@@ -305,8 +305,56 @@ table {
   color: #E0E5E0;
 }
 
-.simplebar-scrollbar:before {
-  background-color: #1A1D1F;
+span.mq-sup > var {
+  color: #07FFDE;
+}
+
+span.mq-sup > span {
+  color: #07FFDE;
+}
+
+span.mq-sub > var {
+  color: #07FFDE;
+}
+
+span.mq-sub > span {
+  color: #07FFDE;
+}
+
+.mq-binary-operator {
+  color:#FD9BC1;
+}
+
+.mq-operator-name {
+  color: #FD9BC1;
+}
+
+var {
+  color:#72C2FD;
+}
+
+.mq-f {
+  color:#ACEDFF;
+}
+
+span.mq-scaled.mq-paren {
+  color:#ACEDFF;
+}
+
+span.mq-scaled.mq-paren.mq-ghost {
+  color:#ACEDFF;
+}
+
+.mq-sqrt-prefix, .mq-sqrt-stem {
+  color:#ACEDFF;
+}
+
+span.mq-sqrt-stem > span {
+  color:#E0E5E0;
+}
+
+span.mq-sqrt-stem > .mq-operator-name, span.mq-sqrt-stem > .mq-binary-operator{
+  color: #FD9BC1;
 }
 
 /*----------------------------------------------------------------------------*/
