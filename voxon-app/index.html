@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang=en>
+<head>
+    <meta name="author">
+    <title>Nuplica | Voxon Demo</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Raleway:400,500&display=swap" rel="stylesheet">
+    
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        #canvas {
+            z-index: -1;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        
+        p {
+            float : left;
+            font: 16px/24px 'Raleway', sans-serif;
+            padding: 10px 30px;
+            color: #07FFDE;
+            background-color: black;
+            
+        }
+        
+        .button {
+            padding: 3px 7px;
+            border: 1px solid black;
+            background: #2F3644;
+            margin-right: 20px;
+           
+        }
+        
+        .active {
+            border-color: #07FFDE;;
+        }
+        
+        .button:hover {
+            border: 1px solid white;
+        }
+        
+        #colors > span {
+            float: left;
+            display: block;
+            height: 16px;
+            width: 16px;
+            margin: 3px 5px;
+            display: none;
+        }
+        
+        .clear {
+            clear: both;
+        }
+        
+        #colors > span:hover {
+            border: 1px solid white;
+        }
+        
+        .voxon-logo {
+            position: relative;
+            top: 10px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="clear"></div>
+    <p>
+        <img class="voxon-logo" src="voxon-logo-small.svg" alt="">
+        <span class="button" id="go" onclick="go()" />start/stop</span>
+        <span class="button" id="wireframe" onclick="toggleWireframe()" />wireframe</span>
+        <span class="button" id="clear" onclick="reset()" />clear</span>
+    </p>
+    <p id="colors">
+    </p>
+
+    <canvas id="canvas">
+        <p style="padding-top: 50px">
+            Your browser does not support &lt;canvas&gt; and WebGL<br/>
+            <a href="http://get.webgl.org">http://get.webgl.org</a>
+        </p>
+    </canvas>
+
+<script id="vertex-shader" type="x-shader/x-vertex" charset="utf-8">
+
+    uniform mat4 uMVMatrix;
+    uniform mat4 uPMatrix;
+
+    attribute vec3 aPosition;
+
+    void main( void ) {
+
+        gl_Position = uPMatrix * uMVMatrix * vec4( aPosition, 1.0 );
+
+    }
+
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment" charset="utf-8">
+
+    #ifdef GL_ES
+        precision highp float;
+    #endif
+
+    uniform vec3 uColor;
+
+    void main(void) {
+
+        gl_FragColor = vec4( uColor, 1.0 );
+
+    }
+
+</script>
+
+<script id="body-vertex-shader" type="x-shader/x-vertex" charset="utf-8">
+
+    uniform mat4 uMVMatrix;
+    uniform mat4 uPMatrix;
+    
+    uniform vec3 uLight;
+    
+    attribute vec3 aPosition;
+    attribute vec3 aNormal;
+    attribute vec3 aColor;
+    
+    varying vec4 vColor;
+    
+    void main( void ) {
+    
+        gl_Position = uPMatrix * uMVMatrix * vec4( aPosition, 1.0 );
+        
+        vColor = vec4( aColor * ( abs( dot( normalize( aNormal ), uLight ) * 0.5 ) + 0.5 ), 1.0);
+    
+    }
+    
+</script>
+
+<script id="body-fragment-shader" type="x-shader/x-fragment" charset="utf-8">
+    
+    #ifdef GL_ES
+        precision highp float;
+    #endif
+    
+    varying vec4 vColor;
+    
+    void main(void) {
+        
+        gl_FragColor = vColor;
+        
+    }
+    
+</script>
+
+<script type="text/javascript" charset="utf-8" src="lib/requestAnimationFrame.js"></script>
+<script type="text/javascript" charset="utf-8" src="lib/glMatrix.js"></script>
+
+<script type="text/javascript" charset="utf-8" src="src/vertex.js"></script>
+<script type="text/javascript" charset="utf-8" src="src/edge.js"></script>
+<script type="text/javascript" charset="utf-8" src="src/face.js"></script>
+<script type="text/javascript" charset="utf-8" src="src/cube.js"></script>
+<script type="text/javascript" charset="utf-8" src="src/body.js"></script>
+<script type="text/javascript" charset="utf-8" src="src/floor.js"></script>
+<script type="text/javascript" charset="utf-8" src="src/soft.js"></script>
+
+</body>
+</html>
