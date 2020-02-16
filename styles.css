@@ -83,6 +83,10 @@ table {
 	padding: 0;
 }
 
+.logo:hover {
+  color: #6D6D81;
+}
+
 .navigation {
   margin-bottom: 40px;
 }
@@ -105,6 +109,10 @@ table {
   text-decoration: none;
   margin: 10px 0px 10px 0px;
 	padding: 0;
+}
+
+.nav-item > a:hover {
+  color: #6D6D81;
 }
 
 .legend-container {
