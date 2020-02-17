@@ -453,7 +453,7 @@ span.mq-sqrt-stem > .mq-operator-name, span.mq-sqrt-stem > .mq-binary-operator{
   height: auto;
 }
 
-.thumb-img:hover {
+.thumb-img-w:hover {
   opacity: 0.8;
 }
 
